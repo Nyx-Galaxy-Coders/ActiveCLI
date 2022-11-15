@@ -1,2 +1,2 @@
 # ActiveCLI
-A neat tool to help developer develop CLI apps.
+A little tool to make the visual part of creating CLI's a piece of cake
