@@ -7,6 +7,8 @@ It's surprisingly simple, just import it inside your script, and you're good to 
 ## Features
 
 * Colored printing, with similar syntax to Python's built in ``print()`` command
+
+![image](https://user-images.githubusercontent.com/114549101/202034203-411cbae2-ccb0-4ae1-aff3-858c2a347d87.png)
 * A divider... no need to copy the silly simbol, we got you!
 * A Header... same thing but with text in the middle... and can be colored individually from the divider.
 * Pop-ups, so you can annoy your users :D
