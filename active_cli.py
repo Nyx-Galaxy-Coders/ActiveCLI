@@ -1,5 +1,5 @@
 class about:
-    version="0.2.0 alpha"
+    version="0.2.1 alpha"
     developers=["ZackTheKill3r","Nyx_Chan0_0"]
     description="A little tool to make the visual part of creating CLI's a piece of cake"
     
@@ -27,7 +27,7 @@ class CLI:
 
 def pcolor(str,color="white",breakline=True):
     """Use this to print text with colors:\n
-    grey, red, green, yellow, blue, magenta, cyan and white(default)\n
+    grey, red, green, yellow, blue, magenta, cyan, rainbow and white(default)\n
     You can use replace print by pcolor using: ``from active_cli import pcolor as print``"""
     if CLI.color_support == False : color="white" 
     if color == "rainbow":
@@ -42,13 +42,16 @@ def pcolor(str,color="white",breakline=True):
     else:
         return print(colored(str,color),end="\n")
     
-def divider(size):
+def divider(size,color="white",print=True):
     """Returns a divider with the specified lenght"""
-    if CLI.color_support == False : color="white" 
+    if CLI.color_support == False : color="white"
     divider_queue = "█"
     for s in range(size):
         divider_queue = divider_queue + "█"
-    return divider_queue
+    if print:
+        pcolor(divider_queue,color)
+    else:
+        return divider_queue
 
 def popup(title,text,type=0):
     """Only works for Windows!\n
@@ -69,9 +72,9 @@ def popup(title,text,type=0):
         return "Ignore/Repeat"
 
 def header(size,text,color="white",text_color="white"):
+    """Quickly prints a text between two dividers with the specified length and color"""
     if CLI.color_support == False : color="white" ; text_color="white" 
-    """Quickly prints a text between a divider with the specified length and color"""
-    pcolor(divider(size),color,breakline=False) ; pcolor(f" {text} ",text_color if text_color != "" else text_color,breakline=False) ; pcolor(divider(size),color)
+    pcolor(divider(size,print=False),color,breakline=False) ; pcolor(f" {text} ",text_color if text_color != "" else text_color,breakline=False) ; pcolor(divider(size,print=False),color)
 
 def clearconsole():
     os.system('cls' if os.name == 'nt' else 'clear')
