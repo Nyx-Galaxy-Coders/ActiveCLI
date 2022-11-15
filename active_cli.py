@@ -1,5 +1,5 @@
 class about:
-    version="0.2.1 alpha"
+    version="0.2.2 alpha"
     developers=["ZackTheKill3r","Nyx_Chan0_0"]
     description="A little tool to make the visual part of creating CLI's a piece of cake"
     
@@ -70,6 +70,11 @@ def popup(title,text,type=0):
         return "no"
     elif msgbox == None or "None":
         return "Ignore/Repeat"
+
+def breakline(lines=1):
+    """Break a few lines without actually using pcolor/print"""
+    for l in range(lines):
+        pcolor("")
 
 def header(size,text,color="white",text_color="white"):
     """Quickly prints a text between two dividers with the specified length and color"""
